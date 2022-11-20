@@ -21,7 +21,7 @@ const store = createStore({
       state.pi = Math.sqrt(state.pi)
     },
     addItem(state) {
-      state.menus.push(null)
+      state.menus.push(3 + state.menus.length)
     },
   },
   getters: {

@@ -12,9 +12,8 @@ const validRoutes = routes.filter(({ name }) => name)
 const selectedKeys = ref<string[]>([path.value]);
 
 watch(path, () => {
-  selectedKeys.value.push(path.value)
+  selectedKeys.value = [path.value]
 })
-
 
 function setClass() {
   return store.getters.getColor ? 'color' : null
@@ -29,9 +28,9 @@ function setClass() {
           <router-link :to="route.path">{{ route.name }}</router-link>
         </a-menu-item>
         <!-- 动态菜单 -->
-        <a-menu-item v-for="(name, index) in store.state.menus" :class="setClass()" :key="name + index"
-          @click="router.push(`dynamicPage${3 + index}`)">
-          {{ '动态菜单' + (3 + index) }}
+        <a-menu-item v-for="i in store.state.menus" :class="setClass()" :key="'/dynamicPage_' + i"
+          @click="router.push('dynamicPage_' + i)">
+          {{ '动态菜单' + i }}
         </a-menu-item>
       </a-menu>
     </div>

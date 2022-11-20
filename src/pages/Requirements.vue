@@ -7,13 +7,22 @@
       <div>3、每个功能卡片须独立为组件。</div>
       <div>4、约定时间内（少于24小时），按实际完成量，提交源码进行考核。</div>
     </div>
-    <div></div>
     <DepList />
+    <div class="links">
+      <a target="_blank" href="https://github.com/fantasy-q/test-aGJsZw">GitHub</a>
+      <a target="_blank" href="http://2022.test.hblg.vip">Source</a>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .description {
   margin-bottom: 20px;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
 }
 </style>
